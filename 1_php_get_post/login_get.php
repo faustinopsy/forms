@@ -1,6 +1,6 @@
 <?php
-    $username = $_GET['username'];
-    $password = $_GET['password'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
     
     if ($username === 'admin' && $password === '1234') {
         echo '<p>Login bem-sucedido!</p>';

@@ -6,11 +6,12 @@
     <title>Login</title>
 </head>
 <body>
-    <?php
+    
+<?php
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $username = $_GET['username'];
             $password = $_GET['password'];
-            
+            // var_dump($_GET);exit;
             if ($username === 'admin' && $password === '1234') {
                 echo '<p>Login bem-sucedido!</p>';
             } else {
@@ -18,7 +19,6 @@
             }
         }
     ?>
-
     <form action="" method="GET">
         <label for="username">Nome de usuário:</label><br>
         <input type="text" id="username" name="username"><br>
@@ -26,5 +26,6 @@
         <input type="password" id="password" name="password"><br><br>
         <input type="submit" value="Login">
     </form>
+    
 </body>
 </html>

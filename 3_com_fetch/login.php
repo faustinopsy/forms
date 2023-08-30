@@ -1,7 +1,8 @@
 <?php
 
 $data = json_decode(file_get_contents('php://input'), true);
-
+//var_dump(file_get_contents('php://input'));
+//var_dump($data);exit;
 if(isset($data['username']) && isset($data['password'])){
     $username = $data['username'];
     $password = $data['password'];
