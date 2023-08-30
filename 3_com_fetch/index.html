@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <form id="loginForm">
+        <label for="fruta">Qual a letra:</label><br>
+        <input type="text" id="fruta" name="fruta"><br>
+        <input type="submit" value="Login">
+    </form>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const fruta = document.getElementById('fruta').value;
+
+            fetch('fruta.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ fruta})
+            })
+            .then(response => response.json())
+            .then(data => alert(data.message+'-\n'+data.fruta))
+            .catch(error => console.error('Error:', error));
+        });
+
+    </script>
+</body>
+</html>
